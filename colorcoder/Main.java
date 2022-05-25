@@ -4,7 +4,6 @@ import java.util.Map;
 
 public class Main {
 
-
     public static void main(String[] args) {
 
         Main main = new Main();
@@ -18,7 +17,7 @@ public class Main {
     }
 
     private void printColorCodingReferenceManual(Map<Integer,ColorPair> colorCodingPairMap) {
-        System.out.println("**********************************");
+        System.out.println("------------------------------------");
         System.out.println("****Color Coding Reference Manual *****");
         System.out.println("Pair No.|| MajorColor || MinorColor");
         for(Map.Entry<Integer,ColorPair> colorPairEntry : colorCodingPairMap.entrySet()) {

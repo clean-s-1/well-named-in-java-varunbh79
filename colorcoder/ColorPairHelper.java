@@ -46,7 +46,7 @@ public class ColorPairHelper {
                break;
            }
        }
-        for(MinorColor color: MinorColor.values()) {
+       for(MinorColor color: MinorColor.values()) {
             if(color.getIndex() == minorColorIndex) {
                 minorColor = color;
                 break;

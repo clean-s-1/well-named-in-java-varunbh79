@@ -18,12 +18,4 @@ public enum MajorColor  {
         return index;
     }
 
-   /* public static MajorColor fromIndex(int index) {
-        for(MajorColor color: MajorColor.values()) {
-            if(color.getIndex() == index) {
-                return color;
-            }
-        }
-        return null;
-    }*/
 }

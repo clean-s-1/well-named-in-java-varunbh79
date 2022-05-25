@@ -20,7 +20,7 @@ public class ColorPairHelper {
                                  MinorColor expectedMinor)
     {
         ColorPair colorPair = GetColorFromPairNumber(pairNumber);
-        System.out.println("Got pair " + colorPair.ToString());
+        System.out.println("Got pair " + colorPair);
         assert(colorPair.getMajor() == expectedMajor);
         assert(colorPair.getMinor() == expectedMinor);
     }

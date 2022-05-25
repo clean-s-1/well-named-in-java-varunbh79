@@ -2,14 +2,16 @@ package colorcoder;
 
 public class ColorPairHelper {
 
-   public static ColorPair GetColorFromPairNumber(int pairNumber) {
+   private static ColorPair GetColorFromPairNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
-        MajorColor majorColor = MajorColor.fromIndex(zeroBasedPairNumber / ColorPair.numberOfMajorColors);
-        MinorColor minorColor = MinorColor.fromIndex(zeroBasedPairNumber % ColorPair.numberOfMinorColors);
-        return new ColorPair(majorColor, minorColor);
+        int majorColorIndex = zeroBasedPairNumber / ColorPair.numberOfMajorColors ;
+        int minorColorIndex = zeroBasedPairNumber % ColorPair.numberOfMinorColors ;
+        ColorPair colorPair = retrieveColorPairBasedOnColorIndices(majorColorIndex,minorColorIndex);
+        return colorPair;
     }
 
-   public static int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
+   private static int GetPairNumberFromColor(MajorColor major,
+                                             MinorColor minor) {
         return major.getIndex() * ColorPair.numberOfMinorColors + minor.getIndex() + 1;
     }
 
@@ -32,4 +34,25 @@ public class ColorPairHelper {
         System.out.println("Got pair number " + pairNumber);
         assert(pairNumber == expectedPairNumber);
     }
+
+    private static ColorPair retrieveColorPairBasedOnColorIndices(
+            int majorColorIndex,int minorColorIndex) {
+
+       MajorColor majorColor = null;
+       MinorColor minorColor = null;
+       for(MajorColor color: MajorColor.values()) {
+           if(color.getIndex() == majorColorIndex) {
+               majorColor = color;
+               break;
+           }
+       }
+        for(MinorColor color: MinorColor.values()) {
+            if(color.getIndex() == minorColorIndex) {
+                minorColor = color;
+                break;
+            }
+        }
+       return new ColorPair(majorColor,minorColor);
+    }
+
 }

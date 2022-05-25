@@ -14,6 +14,7 @@ public class ColorPair {
     private final MajorColor majorColor;
     private final MinorColor minorColor;
 
+
     public ColorPair(MajorColor major, MinorColor minor)
     {
         this.majorColor = major;
@@ -34,6 +35,7 @@ public class ColorPair {
         colorPairStr += MinorColorNames[minorColor.getIndex()];
         return colorPairStr;
     }
+
 
 
 
